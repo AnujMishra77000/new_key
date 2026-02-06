@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Flat</title>
+</head>
+<body>
+    <h2>Add New Flat</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save Flat</button>
+    </form>
+
+</body>
+</html>

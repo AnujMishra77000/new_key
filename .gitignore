@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+venv/
+Venv
+env/
+ENV/
+*.venv
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+/media/
+static_cdn/ # if you have a specific folder for static files that are generated at runtime
+
+# IDE specific (optional, consider a global gitignore instead)
+.idea/ # for PyCharm
+.vscode/ # for VS Code
+*.sublime-workspace
+*.sublime-project
+
+# OS specific
+.DS_Store
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.cache
+
+#frontend
+palava.mp4
+runwal.mp4
+sai.mp4

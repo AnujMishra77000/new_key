@@ -1,0 +1,10 @@
+<h2>Schedule Campaign</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <textarea name="message" placeholder="Enter campaign message"></textarea><br><br>
+
+    <input type="datetime-local" name="scheduled_time"><br><br>
+
+    <button type="submit">Schedule</button>
+</form>

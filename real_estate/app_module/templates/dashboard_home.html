@@ -1,0 +1,27 @@
+<h1>Dashboard</h1>
+
+<div style="display:flex; gap:20px; margin-top:30px;">
+
+    <a href="{% url 'add_flat' %}">
+        <button style="padding:20px; font-size:18px;">Add Flat</button>
+    </a>
+
+    <a href="{% url 'add_lead' %}">
+        <button style="padding:20px; font-size:18px;">Add Lead</button>
+    </a>
+
+    <a href="{% url 'add_campaign'%}">
+        <button style="padding:20px; font-size:18px;">Add Camp</button>
+    </a>
+   
+    <a href="{% url 'campaign_tracker' %}" class="btn">Campaign Tracker</a>
+
+    <a href="{% url 'add_resale' %}">
+        <button>Add Resale Flat</button>
+    </a>
+
+    <a href="{% url 'add_rent' %}">
+        <button>Add Rent Flat</button>
+    </a>
+
+</div>

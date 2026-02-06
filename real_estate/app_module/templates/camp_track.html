@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaign Tracker</title>
+</head>
+<body>
+
+<h2>Campaign Tracker</h2>
+
+<table border="1" width="100%" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Status</th>
+        <th>Scheduled Time</th>
+        <th>Total Leads</th>
+        <th>Sent</th>
+        <th>Failed</th>
+    </tr>
+
+    {% for c in campaigns %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.status }}</td>
+        <td>{{ c.scheduled_time }}</td>
+        <td>{{ c.total_leads }}</td>
+        <td>{{ c.sent_count }}</td>
+        <td>{{ c.failed_count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br><br>
+<a href="{% url 'dashboard_home' %}">Back to Dashboard</a>
+
+</body>
+</html>
