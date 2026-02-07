@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rental Homes</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f5f5f5;
+        }
+
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:60px auto;
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .segment-grid{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:20px;
+        }
+
+        .segment-card{
+            background:#fff;
+            border-radius:10px;
+            padding:40px 20px;
+            text-align:center;
+            text-decoration:none;
+            color:#000;
+            border:1px solid #e0e0e0;
+            transition:.3s;
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .segment-card:hover{
+            transform: translateY(-6px);
+            box-shadow:0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        @media(max-width:992px){
+            .segment-grid{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width:600px){
+            .segment-grid{
+                grid-template-columns:1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Rental Homes by Segment</h2>
+
+    <div class="segment-grid">
+        <a href="rental_api.html?category=1RK" class="segment-card">1 RK</a>
+        <a href="rental_api.html?category=1BHK" class="segment-card">1 BHK</a>
+        <a href="rental_api.html?category=2BHK" class="segment-card">2 BHK</a>
+        <a href="rental_api.html?category=3BHK" class="segment-card">3 BHK</a>
+        <a href="rental_api.html?category=Office" class="segment-card">Office</a>
+    </div>
+</div>
+
+</body>
+</html>

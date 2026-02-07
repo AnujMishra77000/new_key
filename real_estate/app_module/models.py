@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django_resized import ResizedImageField
 
 
 
@@ -21,10 +22,22 @@ class Flat(models.Model):
 
     title = models.CharField(max_length=200)
     description = models.TextField()
-    price = models.DecimalField(max_digits=12, decimal_places=2)
+    price = models.CharField(max_length=20, help_text="Example: 45 Lac, 56 Lac, 1 Cr, 2.5 Cr")
 
-    image = models.ImageField(upload_to='flats/images/')
-    blueprint = models.ImageField(upload_to='flats/blueprints/')
+    image = ResizedImageField(
+            size=[800, 600],
+            quality=75,
+            upload_to='flats/images/',
+            force_format='WEBP'
+        )
+
+    blueprint = ResizedImageField(
+                size=[1000, 800],
+                quality=75,
+                upload_to='flats/blueprints/',
+                force_format='WEBP', blank=True, null=True
+            )
+
 
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -99,22 +112,12 @@ class Campaign(models.Model):
 # Table for Resale flat not related with new flat or any other table
 
 class ResaleFlat(models.Model):
-    CATEGORY_CHOICES = (
-        ('1RK', '1RK'),
-        ('1BHK', '1BHK'),
-        ('2BHK', '2BHK'),
-        ('3BHK', '3BHK'),
-    )
-
+    
     title = models.CharField(max_length=200)
     description = models.TextField()
-    price = models.DecimalField(max_digits=12, decimal_places=2)
-
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    price = models.CharField(max_length=20, help_text="Example: 45 Lac, 56 Lac, 1 Cr, 2.5 Cr")
     image = models.ImageField(upload_to='resale/images/')
-    blueprint = models.ImageField(upload_to='resale/blueprints/', null=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -122,23 +125,14 @@ class ResaleFlat(models.Model):
 
 
 class RentFlat(models.Model):
-    CATEGORY_CHOICES = (
-        ('1RK', '1RK'),
-        ('1BHK', '1BHK'),
-        ('2BHK', '2BHK'),
-        ('3BHK', '3BHK'),
-    )
-
+    
     title = models.CharField(max_length=200)
     description = models.TextField()
     deposite = models.DecimalField(max_digits=12, decimal_places=2, default=50000)
-    monthly_price = models.DecimalField(max_digits=12, decimal_places=2)
-
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    monthly_rent = models.DecimalField(max_digits=12, decimal_places=2)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     image = models.ImageField(upload_to='rent/images/')
-    blueprint = models.ImageField(upload_to='rent/blueprints/', null=True)
-
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

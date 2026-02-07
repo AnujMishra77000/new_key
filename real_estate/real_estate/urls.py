@@ -18,9 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from app_module.views import home, flats, rental, resale
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('', home),
+    path('flats/', flats),
+    path('rental/', rental),
+    path('resale/', resale),
+    
     path('api/', include('app_module.api.urls')),
     path('dash/', include('app_module.dashboard.urls')),
     

@@ -1,0 +1,410 @@
+<style>
+
+    /* ===== RESET ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* ===== CONTAINER ===== */
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+    }
+    
+    /* ===== SECTION SPACING ===== */
+    section {
+        padding: 60px 0;
+    }
+    
+    /* ===== HEADINGS ===== */
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 32px;
+    }
+    
+    section p {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #555;
+    }
+    
+    /* ===== BUILDER SECTION ===== */
+    .builder-section {
+        margin-bottom: 70px;
+    }
+    
+    .builder-section h2 {
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 26px;
+        border-left: 5px solid #2c3e50;
+        padding-left: 10px;
+    }
+    
+    /* ===== 4 CARDS IN ROW ===== */
+    .bhk-card-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    /* ===== CARD DESIGN ===== */
+    .bhk-card {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+        transition: 0.3s ease;
+    }
+    
+    .bhk-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* ===== IMAGE FIT (very important) ===== */
+    .bhk-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    /* ===== TEXT INSIDE CARD ===== */
+    .bhk-card h3 {
+        padding: 12px 15px 5px;
+        font-size: 18px;
+    }
+    
+    .bhk-card p {
+        padding: 0 15px;
+        font-size: 14px;
+        margin: 4px 0;
+        color: #444;
+    }
+    
+    /* ===== AMENITIES ===== */
+    .amenities {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 12px 15px 15px;
+    }
+    
+    .amenities span {
+        background: #f1f1f1;
+        padding: 5px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    
+    /* ===== RESPONSIVE (important) ===== */
+    @media (max-width: 992px) {
+        .bhk-card-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .bhk-card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* ===== PROPERTY TYPE (3 CARDS) ===== */
+    .property-type-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .property-type-card {
+        text-decoration: none;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 30px 20px;
+        text-align: center;
+        color: #000;
+        transition: 0.3s;
+        background: #fafafa;
+    }
+
+    .property-type-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .property-type-card h3 {
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .property-type-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    
+    </style>
+    
+
+
+<!-- ===== SECTION: FIND YOUR PERFECT PROPERTY ===== -->
+<section id="property-types">
+    <div class="container">
+        <h2>Find Your Perfect Property</h2>
+
+        <div class="property-type-cards">
+
+            <!-- New Constructions -->
+            <a href="#premium-developers" class="property-type-card">
+                <div class="card-content">
+                    <h3>New Constructions</h3>
+                    <p>Explore brand new projects from top builders with modern amenities and premium designs.</p>
+                </div>
+            </a>
+
+            <!-- Resale Property -->
+            <a href="resale" class="property-type-card">
+                <div class="card-content">
+                    <h3>Resale Property</h3>
+                    <p>Find verified resale homes at great prices in prime locations ready to move in.</p>
+                </div>
+            </a>
+
+            <!-- Rental Homes -->
+            <a href="rental" class="property-type-card">
+                <div class="card-content">
+                    <h3>Rental Homes</h3>
+                    <p>Browse comfortable rental homes for families, bachelors, and working professionals.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+<!-- ===== SECTION: PREMIUM PROPERTY DEVELOPERS ===== -->
+<section id="premium-developers">
+    <div class="container">
+
+        <h2>Premium Property Developers</h2>
+
+        <!-- ================= RUNWAL ================= -->
+        <div class="builder-section">
+            <h2>Runwal Properties</h2>
+
+            <div class="bhk-card-grid">
+
+                <!-- 1 BHK -->
+                <a href="flats/?builder=Runwal&bhk=1 BHK" class="bhk-card">
+                    <img src="default1.jpg" alt="1BHK">
+                    <h3>1 BHK</h3>
+                    <p>Area: 590 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 67 Lac</p>
+
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 1.5 BHK -->
+                <a href="flats/?builder=Runwal&bhk=1.5 BHK" class="bhk-card">
+                    <img src="default2.jpg" alt="1.5BHK">
+                    <h3>1.5 BHK</h3>
+                    <p>Area: 720 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 82 Lac</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 2 BHK -->
+                <a href="flats/?builder=Runwal&bhk=2 BHK" class="bhk-card">
+                    <img src="default3.jpg" alt="2BHK">
+                    <h3>2 BHK</h3>
+                    <p>Area: 950 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.1 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 3 BHK -->
+                <a href="flats/?builder=Runwal&bhk=3 BHK" class="bhk-card">
+                    <img src="default4.jpg" alt="3BHK">
+                    <h3>3 BHK</h3>
+                    <p>Area: 1250 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.8 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- ================= SAI ================= -->
+        <div class="builder-section">
+            <h2>Sai Paradise Properties</h2>
+            <div class="bhk-card-grid">
+
+                <!-- 1 BHK -->
+                <a href="flats/?builder=Sai Paradies&bhk=1 BHK" class="bhk-card">
+                    <img src="default1.jpg" alt="1BHK">
+                    <h3>1 BHK</h3>
+                    <p>Area: 590 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 67 Lac</p>
+
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 1.5 BHK -->
+                <a href="flats/?builder=Sai Paradies&bhk=1.5 BHK" class="bhk-card">
+                    <img src="default2.jpg" alt="1.5BHK">
+                    <h3>1.5 BHK</h3>
+                    <p>Area: 720 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 82 Lac</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 2 BHK -->
+                <a href="flats/?builder=Sai Paradies&bhk=2 BHK" class="bhk-card">
+                    <img src="default3.jpg" alt="2BHK">
+                    <h3>2 BHK</h3>
+                    <p>Area: 950 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.1 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 3 BHK -->
+                <a href="flats/?builder=Sai Paradies&bhk=3 BHK" class="bhk-card">
+                    <img src="default4.jpg" alt="3BHK">
+                    <h3>3 BHK</h3>
+                    <p>Area: 1250 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.8 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>  
+             </div>    
+        </div>
+
+       <!-- ================= Lodha ================= -->
+        <div class="builder-section">
+            <h2>Lodha Properties</h2>
+            <div class="bhk-card-grid">
+
+                <!-- 1 BHK -->
+                <a href="flats/?builder=Lodha&bhk=1 BHK" class="bhk-card">
+                    <img src="default1.jpg" alt="1BHK">
+                    <h3>1 BHK</h3>
+                    <p>Area: 590 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 67 Lac</p>
+
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 1.5 BHK -->
+                <a href="flats/?builder=Lodha&bhk=1.5 BHK" class="bhk-card">
+                    <img src="default2.jpg" alt="1.5BHK">
+                    <h3>1.5 BHK</h3>
+                    <p>Area: 720 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 82 Lac</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 2 BHK -->
+                <a href="flats/?builder=Lodha&bhk=2 BHK" class="bhk-card">
+                    <img src="default3.jpg" alt="2BHK">
+                    <h3>2 BHK</h3>
+                    <p>Area: 950 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.1 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+                <!-- 3 BHK -->
+                <a href="flats/?builder=Lodha&bhk=3 BHK" class="bhk-card">
+                    <img src="default4.jpg" alt="3BHK">
+                    <h3>3 BHK</h3>
+                    <p>Area: 1250 sqft</p>
+                    <p>Runwal - Garden City</p>
+                    <p>Price: 1.8 Cr</p>
+                    <div class="amenities">
+                        <span>Gym</span>
+                        <span>Club</span>
+                        <span>Library</span>
+                        <span>Sport Court</span>
+                    </div>
+                </a>
+
+            </div>
+                <!-- Same 4 cards, only builder name changes in URL -->
+                <!-- Copy above cards and change builder=sai -->
+            </div>
+        </div>
+    </div>
+</section>
+              

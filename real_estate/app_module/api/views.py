@@ -32,7 +32,10 @@ class FlatListView(generics.ListAPIView):
     queryset = Flat.objects.all().order_by('-created_at') 
     serializer_class = FlatSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]    
-    filterset_fields = ['builder', 'category']
+    filterset_fields =  {
+        'builder__name': ['exact'],
+        'category__name': ['exact'],
+    }
     search_fields = ['title', 'description']
 
 # flat details for whatsapp autofill
@@ -44,10 +47,14 @@ class FlatDetailView(generics.RetrieveAPIView):
 class ResaleFlatListView(generics.ListAPIView):
     queryset = ResaleFlat.objects.all().order_by('-created_at')
     serializer_class = ResaleFlatSerializer
-    filterset_fields = ['category']
+    filterset_fields = {
+        'category__name': ['exact'],
+    }
 
 
 class RentFlatListView(generics.ListAPIView):
     queryset = RentFlat.objects.all().order_by('-created_at')
     serializer_class = RentFlatSerializer
-    filterset_fields = ['category']
+    filterset_fields ={
+        'category__name': ['exact'],
+    }

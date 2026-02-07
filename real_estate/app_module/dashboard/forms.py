@@ -29,11 +29,11 @@ class ResaleFlatForm(forms.ModelForm):
         model = ResaleFlat
         fields = [
             'title',
+            'category',
             'description',
             'price',
-            'category',
             'image',
-            'blueprint',
+            
         ]
 
 class RentFlatForm(forms.ModelForm):
@@ -41,9 +41,10 @@ class RentFlatForm(forms.ModelForm):
         model = RentFlat
         fields = [
             'title',
-            'description',
-            'monthly_price',
             'category',
+            'description',
+            'deposite',
+            'monthly_rent',
             'image',
-            'blueprint',
+           
         ]
